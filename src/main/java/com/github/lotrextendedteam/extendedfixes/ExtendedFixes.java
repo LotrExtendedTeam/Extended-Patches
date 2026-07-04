@@ -1,7 +1,5 @@
 package com.github.lotrextendedteam.extendedfixes;
 
-import com.github.maximuslotro.lotrrextended.ExtendedLog;
-
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.common.MinecraftForge;
@@ -21,9 +19,7 @@ public class ExtendedFixes {
 
 	public static void addRabbitPatch(LivingSpawnEvent.CheckSpawn event) {
 		if(event.getEntity().getType()==EntityType.RABBIT) {
-			ExtendedLog.info("rabbit");
 			if(event.getWorld().getBiome(new BlockPos(event.getX(), event.getY(), event.getZ())).getRegistryName().getNamespace().equals("lotr")) {
-				ExtendedLog.info("lotr biome");
 				event.setResult(Result.DENY);
 			}
 		}
